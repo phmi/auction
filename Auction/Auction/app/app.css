@@ -1,0 +1,24 @@
+﻿.icon-add{
+   background-image:url(images/add.png);
+ }
+.icon-cart{
+   background-image:url(images/cart.png);
+ }
+.icon-delete{
+   background-image:url(images/delete.png);
+ }
+.icon-edit{
+   background-image:url(images/edit.png);
+ }
+.icon-help{
+   background-image:url(images/help.png);
+ }
+.icon-key{
+   background-image:url(images/key.png);
+ }
+.icon-user{
+   background-image:url(images/user.png);
+ }
+.icon-users{
+   background-image:url(images/users.png);
+ }
