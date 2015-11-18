@@ -29,6 +29,7 @@ Ext.application({
         self.showScreen = function(screen) {
             if (currentScreen != null) {
                 viewport.remove(currentScreen, true);
+                currentScreen.destroy();
             }
             Ext.apply(screen, {
                 region: "center"
