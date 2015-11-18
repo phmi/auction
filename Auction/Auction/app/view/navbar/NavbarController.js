@@ -79,34 +79,67 @@
             url: "Account/LogOff",
             success: function () {
                 self.onUserChanged();
-                self.selectScreen("lotsScreen");
+                self.redirectTo("lots");
             }
         });
     },
 
-    onLotsClick: function() {
+    routes: {
+        "lots": "onLots",
+        "mylots": "onMyLots",
+        "users": "onUsers",
+        "about": "onAbout",
+        "cart": "onCart"
+    },
+    
+    onLots: function () {
         var self = this;
         self.selectScreen("lotsScreen");
     },
-    
-    onMyLotsClick: function () {
+
+    onLotsClick: function() {
+        var self = this;
+        self.redirectTo("lots");
+    },
+
+    onMyLots: function () {
         var self = this;
         self.selectScreen("myLotsScreen");
     },
     
-    onUsersClick: function() {
+    onMyLotsClick: function () {
+        var self = this;
+        self.redirectTo("mylots");
+    },
+
+    onUsers: function() {
         var self = this;
         self.selectScreen("usersScreen");
     },
+    
+    onUsersClick: function() {
+        var self = this;
+        self.redirectTo("users");
+    },
 
-    onAboutClick: function () {
+    onAbout: function () {
         var self = this;
         self.selectScreen("aboutScreen");
     },
+    
+    onAboutClick: function () {
+        var self = this;
+        self.redirectTo("about");
+    },
 
-    onCartClick: function() {
+    onCart: function() {
         var self = this;
         self.selectScreen("cartScreen");
+    },
+
+    onCartClick: function () {
+        var self = this;
+        self.redirectTo("cart");
     },
     
     selectScreen: function(xtype) {

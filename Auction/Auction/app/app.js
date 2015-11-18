@@ -2,7 +2,7 @@
 Ext.application({
     name: "Auction",
     appFolder: "app",
-    views: ["navbar.Navbar", "lots.LotsScreen"],
+    views: ["navbar.Navbar"],
     launch: function () {
         var self = this;
 
@@ -36,8 +36,6 @@ Ext.application({
             viewport.add(screen);
             currentScreen = screen;
         };
-
-        var lotsScreen = Ext.create("Auction.view.lots.LotsScreen");
-        self.showScreen(lotsScreen);
-    }
+    },
+    defaultToken: "lots"
 });
