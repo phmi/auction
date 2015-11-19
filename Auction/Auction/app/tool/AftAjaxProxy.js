@@ -3,7 +3,7 @@
     requires: ["Ext.data.proxy.Ajax"],
     alias: "proxy.aftajax",
     constructor: function (config) {
-        var defaults = { timeout: 10000 };
+        var defaults = { };
         this.callParent([Ext.Object.merge(defaults, config)]);
     },
     buildRequest: function (operation) {

@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Optimization;
+using SenchaMinify;
 
 namespace Auction
 {
@@ -26,6 +27,11 @@ namespace Auction
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new SenchaBundle("~/bundles/appjs")
+                .IncludeDirectory("~/app", "*.js", true));
+            bundles.Add(new StyleBundle("~/Content/appcss").Include(
+                      "~/app/app.css"));
         }
     }
 }

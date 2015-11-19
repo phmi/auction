@@ -7,10 +7,10 @@
 <head>
     <title>Аукцион</title>
     <link href="~/ext/theme-neptune/theme-neptune-all.css" rel="stylesheet" />
-    <link href="~/app/app.css" rel="stylesheet" />
+    @Styles.Render("~/Content/appcss")
     <script src="~/ext/ext-all.js"></script>
     <script src="~/ext/locale-ru.js"></script>
-    <script src="~/app/app.js"></script>
+    @Scripts.Render("~/bundles/appjs")
 </head>
 <body>
 @Html.AntiForgeryToken()

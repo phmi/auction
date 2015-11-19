@@ -99,7 +99,7 @@
 
     onLotsClick: function() {
         var self = this;
-        self.redirectTo("lots");
+        self.redirectTo("lots", true);
     },
 
     onMyLots: function () {
@@ -109,7 +109,7 @@
     
     onMyLotsClick: function () {
         var self = this;
-        self.redirectTo("mylots");
+        self.redirectTo("mylots", true);
     },
 
     onUsers: function() {
@@ -119,7 +119,7 @@
     
     onUsersClick: function() {
         var self = this;
-        self.redirectTo("users");
+        self.redirectTo("users", true);
     },
 
     onAbout: function () {
@@ -129,7 +129,7 @@
     
     onAboutClick: function () {
         var self = this;
-        self.redirectTo("about");
+        self.redirectTo("about", true);
     },
 
     onCart: function() {
@@ -139,7 +139,7 @@
 
     onCartClick: function () {
         var self = this;
-        self.redirectTo("cart");
+        self.redirectTo("cart", true);
     },
     
     selectScreen: function(xtype) {
