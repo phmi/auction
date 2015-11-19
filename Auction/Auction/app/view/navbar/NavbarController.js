@@ -15,9 +15,7 @@
         var self = this;
 
         var currentUserStr = sessionStorage.getItem("currentUser");
-        if (currentUserStr) {
-            self.onUserChanged(Ext.JSON.decode(currentUserStr), true);
-        }
+        self.onUserChanged(currentUserStr ? Ext.JSON.decode(currentUserStr) : null, true);
 
         self.requestAjax({
             url: "Account/CurrentUser",

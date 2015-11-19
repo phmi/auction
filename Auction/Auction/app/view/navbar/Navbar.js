@@ -29,8 +29,7 @@
             text: "Пользователи",
             listeners: {
                 click: "onUsersClick"
-            },
-            hidden: true
+            }
         },
         "-",
         {
@@ -63,8 +62,7 @@
                         }
                     }
                 ]
-            },
-            hidden: true
+            }
         },
         {
             xtype: "cartButton",
