@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 9.x                               */
-/* Created on:     16.11.2015 22:10:36                          */
+/* Created on:     20.11.2015 12:04:31                          */
 /*==============================================================*/
 
 
@@ -73,6 +73,7 @@ create table "user" (
    id                   BIGSERIAL            not null,
    name                 TEXT                 not null,
    password             TEXT                 not null,
+   salt                 TEXT                 not null,
    constraint PK_USER primary key (id)
 );
 

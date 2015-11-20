@@ -12,6 +12,8 @@ namespace Auction.DataModel.Entities
 
         public virtual string Password { get; set; }
 
+        public virtual string Salt { get; set; }
+
         private List<Role> _roles;
 
         public virtual IList<Role> Roles

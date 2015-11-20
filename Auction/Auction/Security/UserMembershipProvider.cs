@@ -11,7 +11,7 @@ namespace Auction.Security
         public IUserRepository Repository { get; set; }
 
         [Inject]
-        public IPasswordEncriptor Encriptor { get; set; }
+        public IPasswordEncryptor Encryptor { get; set; }
 
         public override bool ValidateUser(string username, string password)
         {
@@ -22,7 +22,7 @@ namespace Auction.Security
             var user = Repository.GetByUserName(username);
             if (user == null)
                 return false;
-            var hash = Encriptor.Encript(password);
+            var hash = Encryptor.Encrypt(password, user.Salt);
             if (user.Password == hash)
             {
                 return true;

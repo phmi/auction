@@ -8,7 +8,7 @@ namespace Auction
     {
         public override void Load()
         {
-            Bind<IPasswordEncriptor>().To<PasswordEncriptor>();
+            Bind<IPasswordEncryptor>().To<PasswordEncryptor>();
             Bind<ILotRepository>().To<LotRepository>();
             Bind<IMyLotsRepository>().To<MyLotsRepository>();
             Bind<IUserRepository>().To<UserRepository>();

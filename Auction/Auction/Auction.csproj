@@ -163,8 +163,8 @@
     <Compile Include="Repositories\LotRepository.cs" />
     <Compile Include="Repositories\MyLotsRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="Security\IPasswordEncriptor.cs" />
-    <Compile Include="Security\PasswordEncriptor.cs" />
+    <Compile Include="Security\IPasswordEncryptor.cs" />
+    <Compile Include="Security\PasswordEncryptor.cs" />
     <Compile Include="Security\UserMembershipProvider.cs" />
     <Compile Include="Security\UserRoleProvider.cs" />
     <Compile Include="Security\ValidateHeaderAntiForgeryTokenAttribute.cs" />

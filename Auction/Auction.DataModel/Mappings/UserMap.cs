@@ -11,6 +11,7 @@ namespace Auction.DataModel.Mappings
             Id(x => x.Id).Column("id").GeneratedBy.Sequence("user_id_seq");
             Map(x => x.Name).Column("name");
             Map(x => x.Password).Column("password");
+            Map(x => x.Salt).Column("salt");
             HasManyToMany(x => x.Roles)
                 .Table("user_to_role").ParentKeyColumn("ref_user").ChildKeyColumn("ref_role")
                 .Cascade.SaveUpdate()

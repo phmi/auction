@@ -15,14 +15,14 @@ namespace Auction.Controllers
         public IUserRepository UserRepository { get; set; }
 
         [Inject]
-        public IPasswordEncriptor PasswordEncriptor { get; set; }
+        public IPasswordEncryptor PasswordEncryptor { get; set; }
         
         [HttpPost]
         [ValidateAntiForgeryToken]
         public JsonResult LogOn(string username, string password, bool rememberMe)
         {
             var user = UserRepository.GetByUserName(username);
-            if (user == null || user.Password != PasswordEncriptor.Encript(password))
+            if (user == null || user.Password != PasswordEncryptor.Encrypt(password, user.Salt))
             {
                 return JsonError("Неверное имя пользователя или пароль");
             }
@@ -43,11 +43,12 @@ namespace Auction.Controllers
             {
                 return JsonError("Пользователь уже существует");
             }
-
+            var salt = PasswordEncryptor.GenerateSalt();
             user = new User
             {
                 Name = username,
-                Password = PasswordEncriptor.Encript(password)
+                Salt = salt,
+                Password = PasswordEncryptor.Encrypt(password, salt)
             };
 
             var roles = UserRepository.GetRoles();

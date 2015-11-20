@@ -15,7 +15,7 @@ namespace Auction.Controllers
         public IUserRepository UserRepository { get; set; }
 
         [Inject]
-        public IPasswordEncriptor PasswordEncriptor { get; set; }
+        public IPasswordEncryptor PasswordEncryptor { get; set; }
 
         public JsonResult Index(int start, int limit)
         {
@@ -51,7 +51,7 @@ namespace Auction.Controllers
         public JsonResult SetPassword(long id, string password)
         {
             var user = UserRepository.GetById(id);
-            user.Password = PasswordEncriptor.Encript(password);
+            user.Password = PasswordEncryptor.Encrypt(password, user.Salt);
             UserRepository.Update(user);
             return JsonSuccess();
         }
@@ -77,7 +77,9 @@ namespace Auction.Controllers
 
             user = new User();
             userModel.ToUser(user, UserRepository.GetRoles());
-            user.Password = PasswordEncriptor.Encript(password);
+            var salt = PasswordEncryptor.GenerateSalt();
+            user.Salt = salt;
+            user.Password = PasswordEncryptor.Encrypt(password, salt);
             UserRepository.AddUser(user);
             return JsonSuccess();
         }
